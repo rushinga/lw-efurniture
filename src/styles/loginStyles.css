@@ -1,0 +1,409 @@
+
+:root {
+    --text-01: #ebeae9;
+    --light-01: #145485;
+    --light-02: #0b1f37;
+    --brand-01: #344450;
+    --brand-02: #171f27;
+    --card-hover: 0px 4px 24px rgba(0, 0, 0, 0.15);
+    --card-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
+    --hover-timing: all 0.2s ease;
+    --nav-card-size: 240px;
+
+    -webkit-font-smoothing: antialiased;
+    /* font-smoothing: antialiased; */
+    scroll-behavior: smooth;
+  }
+
+  * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+
+  body {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    transition: var(--hover-timing);
+
+    background: var(--light-01);
+
+    width: 100vw;
+    overflow-x: hidden;
+  }
+
+  header {
+    /*    width: 100%;*/
+    height: auto;
+    position: sticky;
+    top: 0;
+    /*    border: 1px solid red;*/
+    z-index: 100;
+  }
+
+  .banner {
+    background: var(--brand-01);
+    color: var(--text-01);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.2;
+    padding: 8px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  nav {
+    color: var(--text-01);
+    font-weight: 600;
+    height: 64px;
+    background: var(--light-01);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 var(--pg-margin);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    margin-right:20px;
+  }
+
+  nav ul.navigation-menu {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    justify-content: center;
+    position: relative;
+    top: 0;
+  }
+
+  nav .navigation-menu a {
+    font-size: 16px;
+    text-decoration: none;
+    color: var(--text-01);
+  }
+
+  nav .navigation-menu > li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /*    justify-items: center;*/
+  }
+
+  nav .navigation-menu > li > a {
+    position: relative;
+    /*    border: 1px solid purple;*/
+    padding: 0 20px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+  }
+
+  nav .navigation-menu > li > a:hover {
+   color: rgb(80, 211, 14);/* Optional: add a subtle shadow effect */
+  }
+
+  nav .navigation-menu > li:hover ul.subnav {
+    visibility: visible;
+    opacity: 1;
+    top: 64px;
+  }
+
+  nav .navigation-menu > li > ul.subnav {
+    /*    border: 1px solid green;*/
+    visibility: hidden;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    top: 66px;
+    background: var(--light-01);
+    box-shadow: var(--card-hover);
+    border-radius: 12px;
+    opacity: 0;
+    transition: var(--hover-timing);
+  }
+
+  nav > #logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    grid-gap: 8px;
+    line-height: 100%;
+    margin-left: 30px;
+  }
+
+  nav > #logo > span {
+    font-size: 32px;
+  }
+
+  /* Utility Container Styles */
+  #utility {
+    display: flex; /* Ensure it's set to flex */
+    flex-direction: row; /* This will align items in a row */
+    align-items: center; /* Center items vertically */
+    gap: 16px; /* Add space between buttons */
+    margin: 0 10px; /* Add margin to separate from nav edges */
+  }
+
+  /* Button Styles */
+  .button-86 {
+    all: unset;
+    width: 100px; /* Width can be adjusted */
+    height: 27px; /* Increased height for better accessibility */
+    font-size: 16px;
+    background: transparent; /* No background by default */
+    border: none;
+    position: relative;
+    color: #f0f0f0; /* Text color */
+    cursor: pointer;
+    z-index: 1;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    transition: color 0.3s ease; /* Smooth color transition */
+  }
+
+  .button-86::after,
+  .button-86::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: -99999;
+    transition: all 0.4s;
+  }
+
+  .button-86::before {
+    transform: translate(0%, 0%);
+    width: 100%;
+    height: 100%;
+    background: #28282d; /* Background color */
+    border-radius: 10px; /* Rounded corners */
+  }
+
+  .button-86::after {
+    transform: translate(10px, 10px);
+    width: 35px;
+    height: 35px;
+    background: #ffffff15;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-radius: 50%; /* Circular effect */
+  }
+
+  /* Remove background on hover */
+  .button-86:hover::before {
+    transform: translate(0, 0); /* Reset transformation to avoid movement */
+    width: 100%; /* Keep the width consistent */
+    height: 100%; /* Keep the height consistent */
+  }
+
+  .button-86:hover::after {
+    border-radius: 10px;
+    transform: translate(0, 0);
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Text color change on hover */
+  .button-86:hover {
+    color: #ffeb3b; /* Change text color on hover */
+  }
+
+  .button-86:active::after {
+    transition: 0s;
+    transform: translate(0, 5%);
+  }
+
+.footer {
+    background-color: #333; /* Dark background for the footer */
+    color: white; /* White text color */
+    padding: 20px; /* Padding for spacing */
+    text-align: center; /* Center align the text */
+  }
+
+  .footer__text {
+    margin: 0; /* Remove default margin */
+    font-size: 14px; /* Font size for the footer text */
+  }
+
+  .footer__text a {
+    color: #00bcd4; /* Link color */
+    text-decoration: none; /* Remove underline from links */
+  }
+
+  .footer__text a:hover {
+    text-decoration: underline; /* Underline links on hover */
+  }
+
+ /* Login Section */
+.login-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #145485; /* Background color for the section */
+    padding: 40px 50px; /* Padding for the section */
+    color: #ebeae9; /* Text color */
+    flex-direction: row-reverse;
+    height:76vh;
+}
+
+.login-form-container {
+    background-color: #171f27; /* Dark background for the form */
+    border-radius: 12px; /* Rounded corners */
+    padding: 30px; /* Padding inside the form container */
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2); /* Shadow effect */
+    width: 400px; /* Fixed width for the form */
+}
+
+.login-form-container h1 {
+    text-align: center; /* Center align heading */
+    font-size: 2rem; /* Font size for heading */
+    margin-bottom: 20px; /* Space below heading */
+}
+
+.login-form-container input {
+    width: 100%; /* Full width for inputs */
+    padding: 10px; /* Padding inside inputs */
+    margin-bottom: 15px; /* Space below inputs */
+    border: none; /* No border */
+    border-radius: 8px; /* Rounded corners */
+    font-size: 1rem; /* Font size for inputs */
+}
+
+.login-form-container button {
+    width: 100%; /* Full width for button */
+    padding: 10px; /* Padding inside button */
+    background-color: #145485; /* Button background color */
+    color: #ebeae9; /* Button text color */
+    border: none; /* No border */
+    border-radius: 8px; /* Rounded corners */
+    font-size: 1rem; /* Font size for button */
+    cursor: pointer; /* Pointer cursor */
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+.login-form-container button:hover {
+    background-color: #0e3d5b; /* Darker shade on hover */
+}
+
+.login-links {
+    text-align: center; /* Center align links */
+    margin-top: 15px; /* Space above links */
+}
+
+.login-links a {
+    color: #ebeae9; /* Link color */
+    text-decoration: none; /* Remove underline */
+}
+
+.logout-message {
+    color: green; /* Color for logout message */
+    text-align: center; /* Center align message */
+    margin-top: 15px; /* Space above message */
+}
+
+.login-info-container {
+    flex: 1; /* Take remaining space */
+    padding: 20px; /* Padding for the info container */
+    text-align: center; /* Center align text */
+}
+
+.motivational-text {
+    margin-bottom: 20px; /* Space below motivational text */
+}
+
+.motivational-text h2 {
+    font-size: 2rem; /* Font size for welcome message */
+    margin-bottom: 10px; /* Space below heading */
+}
+
+.motivational-text p {
+    font-size: 1.1rem; /* Font size for motivational text */
+    margin-bottom: 5px; /* Space below paragraphs */
+}
+
+.logo-name {
+    color:#171f27;
+ }
+.register-section {
+display: flex;
+justify-content: space-between;
+align-items: center;
+background-color: #145485; /* Background color for the section */
+padding: 40px 50px; /* Padding for the section */
+color: #ebeae9; /* Text color */
+flex-direction: row-reverse;
+}
+
+.register-form-container {
+background-color: #171f27; /* Dark background for the form */
+border-radius: 12px; /* Rounded corners */
+padding: 30px; /* Padding inside the form container */
+box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2); /* Shadow effect */
+width: 400px; /* Fixed width for the form */
+}
+
+.register-form-container h1 {
+text-align: center; /* Center align heading */
+font-size: 2rem; /* Font size for heading */
+margin-bottom: 20px; /* Space below heading */
+}
+
+.register-form-container input,
+.register-form-container select {
+width: 100%; /* Full width for inputs and select */
+padding: 10px; /* Padding inside inputs */
+margin-bottom: 15px; /* Space below inputs */
+border: none; /* No border */
+border-radius: 8px; /* Rounded corners */
+font-size: 1rem; /* Font size for inputs */
+}
+
+.register-form-container button {
+width: 100%; /* Full width for button */
+padding: 10px; /* Padding inside button */
+background-color: #145485; /* Button background color */
+color: #ebeae9; /* Button text color */
+border: none; /* No border */
+border-radius: 8px; /* Rounded corners */
+font-size: 1rem; /* Font size for button */
+cursor: pointer; /* Pointer cursor */
+transition: background-color 0.3s; /* Smooth transition */
+}
+
+.register-form-container button:hover {
+background-color: #0e3d5b; /* Darker shade on hover */
+}
+
+.registration-message {
+color: green; /* Color for registration message */
+text-align: center; /* Center align message */
+margin-top: 15px; /* Space above message */
+}
+
+.register-info-container {
+flex: 1; /* Take remaining space */
+padding: 20px; /* Padding for the info container */
+text-align: center; /* Center align text */
+}
+
+.motivational-text {
+margin-bottom: 20px; /* Space below motivational text */
+}
+
+.motivational-text h2 {
+font-size: 2rem; /* Font size for welcome message */
+margin-bottom: 10px; /* Space below heading */
+}
+
+.motivational-text p {
+font-size: 1.1rem; /* Font size for motivational text */
+margin-bottom: 5px; /* Space below paragraphs */
+}
