@@ -53,7 +53,7 @@ const Navbar = ({ active, language, onLanguageChange }) => {
       </div>
 
       <div className="right-section">
-        <select
+        {/* <select
           className="language-switch"
           id="languageSelect"
           value={language}
@@ -68,7 +68,7 @@ const Navbar = ({ active, language, onLanguageChange }) => {
           <option value="fr" selected={language === "fr"}>
             Français
           </option>
-        </select>
+        </select> */}
 
         <a className="dropdown-item" onClick={handleLogout}>
           <i className="fas fa-sign-out-alt"></i>

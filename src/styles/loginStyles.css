@@ -137,6 +137,13 @@
     font-size: 32px;
   }
 
+  .error-message {
+    color: red;
+    text-align: center;
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  
   /* Utility Container Styles */
   #utility {
     display: flex; /* Ensure it's set to flex */

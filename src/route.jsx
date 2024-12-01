@@ -17,6 +17,7 @@ import SearchUser from "./pages/SearchUser";
 import UserProfile from "./pages/UserProfile";
 import Notification from "./pages/Notification";
 import ExportData from "./pages/ExportData";
+import Seller from "./pages/Seller";
 
 const router = createBrowserRouter([
   {
@@ -82,6 +83,10 @@ const router = createBrowserRouter([
   {
     path: "/admin/download/users",
     element: <ExportData />,
+  },
+  {
+    path: "/seller",
+    element: <Seller />,
   },
 ]);
 
