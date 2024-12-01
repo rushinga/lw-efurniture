@@ -38,10 +38,58 @@ const Notification = () => {
     }
   };
 
+  // return (
+  //   <div>
+  //     <AdminNav />
+  //     <div className="notification">
+  //       <form onSubmit={handleSubmit} className="notification_form">
+  //         <div className="input">
+  //           <label htmlFor="title">Title</label>
+  //           <input
+  //             type="text"
+  //             name="title"
+  //             id="title"
+  //             value={title}
+  //             onChange={(e) => setTitle(e.target.value)} // Bind state to input
+  //             required
+  //           />
+  //         </div>
+  //         <div className="input">
+  //           <label htmlFor="message">Message</label>
+  //           <input
+  //             type="text"
+  //             name="message"
+  //             id="message"
+  //             value={message}
+  //             onChange={(e) => setMessage(e.target.value)} // Bind state to input
+  //             required
+  //           />
+  //         </div>
+  //         <button type="submit" className="btn">
+  //           Submit
+  //         </button>
+  //       </form>
+  //       {/* Feedback message */}
+  //       {status && <p>{status}</p>}
+  //     </div>
+  //   </div>
+  // );
+
   return (
     <div>
       <AdminNav />
       <div className="notification">
+        <h1>Send Notifications</h1>
+
+        <div className="tips">
+          <h2>Tips for Effective Notifications</h2>
+          <ul>
+            <li>Keep the title concise and clear.</li>
+            <li>Write a message that provides essential details.</li>
+            <li>Avoid sending duplicate or unnecessary notifications.</li>
+          </ul>
+        </div>
+        {status && <p className="success-message">{status}</p>}
         <form onSubmit={handleSubmit} className="notification_form">
           <div className="input">
             <label htmlFor="title">Title</label>
@@ -50,27 +98,27 @@ const Notification = () => {
               name="title"
               id="title"
               value={title}
-              onChange={(e) => setTitle(e.target.value)} // Bind state to input
+              onChange={(e) => setTitle(e.target.value)}
+              placeholder="Enter notification title"
               required
             />
           </div>
           <div className="input">
             <label htmlFor="message">Message</label>
-            <input
-              type="text"
+            <textarea
               name="message"
               id="message"
               value={message}
-              onChange={(e) => setMessage(e.target.value)} // Bind state to input
+              onChange={(e) => setMessage(e.target.value)}
+              placeholder="Enter the notification message"
+              rows="4"
               required
-            />
+            ></textarea>
           </div>
           <button type="submit" className="btn">
-            Submit
+            Send Notification
           </button>
         </form>
-        {/* Feedback message */}
-        {status && <p>{status}</p>}
       </div>
     </div>
   );
