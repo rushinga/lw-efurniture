@@ -15,6 +15,8 @@ import AddUser from "./pages/AddUser";
 import Analytics from "./pages/Analytics";
 import SearchUser from "./pages/SearchUser";
 import UserProfile from "./pages/UserProfile";
+import Notification from "./pages/Notification";
+import ExportData from "./pages/ExportData";
 
 const router = createBrowserRouter([
   {
@@ -72,6 +74,14 @@ const router = createBrowserRouter([
   {
     path: "/profile/:userId",
     element: <UserProfile />,
+  },
+  {
+    path: "/admin/notifications",
+    element: <Notification />,
+  },
+  {
+    path: "/admin/download/users",
+    element: <ExportData />,
   },
 ]);
 

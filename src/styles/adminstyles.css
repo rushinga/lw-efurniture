@@ -13,7 +13,7 @@
 
 body {
     font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-    background-color: #f5f6fa;
+    background-color: #f3e0c085;
     margin: 0;
     padding: 0;
     color: var(--text-color);
@@ -302,7 +302,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 15px;
-    background-color: #f7f9fc;  /* Light background for footer */
+    background-color: #689be78c;  /* Light background for footer */
     border-radius: 8px;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
   }
@@ -331,16 +331,16 @@ body {
   
   .card-header {
     padding: 15px;
-    background-color: #f1f1f1;
+    background-color: #f1a15219;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #e36e2094;
   }
   
   .card-title {
     font-size: 24px;
     font-weight: bold;
-    color: orange;
+    color: rgb(24, 16, 1);
     text-align: center;
   }
   

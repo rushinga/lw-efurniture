@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import "../styles/forgotPasswordStyles.css"; // Assuming your styles are in forgotPasswordStyles.css
 
 const ForgotPasswordBody = () => {
-  // State for form data and messages
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState(""); // Success or error message
+  const [error, setError] = useState(""); // Handle error messages
 
   // Handle form data changes
   const handleChange = (e) => {
@@ -12,11 +12,31 @@ const ForgotPasswordBody = () => {
   };
 
   // Handle form submission
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // You would send the email to your backend API here.
-    // For now, we simulate a successful form submission.
-    setMessage("A password reset link has been sent to your email!");
+    setMessage(""); // Reset messages
+    setError(""); // Reset errors
+
+    try {
+      const response = await fetch("http://localhost:9090/forgot-password", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      if (response.ok) {
+        setMessage("A password reset link has been sent to your email!");
+      } else {
+        const errorData = await response.json();
+        setError(
+          errorData.message || "Something went wrong. Please try again."
+        );
+      }
+    } catch (err) {
+      setError("Failed to connect to the server. Please try again later.");
+    }
   };
 
   return (
@@ -32,10 +52,10 @@ const ForgotPasswordBody = () => {
 
       <div className="forgot-password-form-container">
         <h1>Forgot Password</h1>
-        {/* Display success message if available */}
-        {message && <div className="message">{message}</div>}
+        {/* Display messages */}
+        {message && <div className="message success">{message}</div>}
+        {error && <div className="message error">{error}</div>}
 
-        {/* Form for email input */}
         <form onSubmit={handleSubmit}>
           <label htmlFor="email">Email:</label>
           <input

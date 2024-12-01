@@ -1,8 +1,13 @@
 import React from "react";
 import "../styles/adminstyles.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Navbar = ({ active, language, onLanguageChange }) => {
+  const navigate = useNavigate();
+  const handleLogout = () => {
+    navigate("/");
+    console.log("Logout");
+  };
   return (
     <nav className="navbar">
       <a href="/admin" className="brand">
@@ -65,7 +70,7 @@ const Navbar = ({ active, language, onLanguageChange }) => {
           </option>
         </select>
 
-        <a href="/logout" className="dropdown-item">
+        <a className="dropdown-item" onClick={handleLogout}>
           <i className="fas fa-sign-out-alt"></i>
           Logout
         </a>
