@@ -26,9 +26,9 @@ In the future, we plan to introduce additional features such as product purchasi
 
 - **Frontend Framework**: React
 - **Build Tool**: Vite
-- **State Management**: (e.g., Redux, React Context API)
+- **State Management**: (React Context API)
 - **Routing**: React Router
-- **Styling**: (e.g., TailwindCSS, Material-UI, or custom CSS)
+- **Styling**: (custom CSS)
 - **API Communication**: Axios (for making API calls to the backend)
 - **Authentication**: JWT (JSON Web Tokens)
 
