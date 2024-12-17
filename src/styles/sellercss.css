@@ -1,145 +1,112 @@
 /* General Section Styling */
 #seller-section {
-    padding: 30px;
-    background: #05407b;
-    font-family: "Arial", sans-serif;
-    color: #333;
-  }
-  
-  #seller-section .header {
-    text-align: center;
-    margin-bottom: 30px;
-  }
-  
-  #seller-section .header h2 {
-    font-size: 2rem;
-    color: #bcd8f1;
-  }
-  
-  #seller-section .header p {
-    font-size: 1rem;
-    color: #efe0e0;
-  }
-  
-  /* Product Grid Layout */
-  .product-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-  }
-  
-  /* Product Card Styling */
-  .product-card {
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 250px;
-    padding: 15px;
-    text-align: center;
-    transition: transform 0.3s, box-shadow 0.3s;
-  }
-  
-  .product-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-  }
-  
-  .product-card .product-image img {
-    max-width: 100%;
-    border-radius: 8px;
-    margin-bottom: 15px;
-  }
-  
-  .product-card .product-details h3 {
-    font-size: 1.25rem;
-    margin-bottom: 10px;
-    color: #333;
-  }
-  
-  .product-card .product-details .price {
-    font-size: 1.1rem;
-    font-weight: bold;
-    color: #1e88e5;
-    margin-bottom: 15px;
-  }
-  
-  /* Button Styling */
-  .btn-action {
-    background: linear-gradient(90deg, #007bff, #0056b3);
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    font-size: 0.9rem;
-    font-weight: bold;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s, transform 0.3s;
-  }
-  
-  .btn-action:hover {
-    background: linear-gradient(90deg, #0056b3, #003f7f);
-    transform: scale(1.05);
-  }
-  
-  /* Notifications Section */
+  padding: 30px;
+  background: #f4f7fc; /* Light blue-gray background */
+  font-family: "Arial", sans-serif;
+  color: #333;
+}
+
+#seller-section .header {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #2c3e50; /* Deep blue-gray for titles */
+}
+
+#seller-section .header h2 {
+  font-size: 2rem;
+  color: #1e88e5; /* Modern blue for headings */
+}
+
+#seller-section .header p {
+  font-size: 1rem;
+  color: #7f8c8d; /* Subdued gray for subtext */
+}
+
+/* Notifications Section */
 .notifications-section {
-    margin-top: 30px;
-    padding: 20px;
-    background: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-  }
-  
-  .notifications-section h2 {
-    font-size: 1.5rem;
-    color: #1e88e5;
-    margin-bottom: 15px;
-  }
-  
-  .notification-list {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .notification-item {
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 15px;
-    margin-bottom: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .notification-item h3 {
-    margin: 0;
-    font-size: 1.2rem;
-    color: #1e88e5;
-  }
-  
-  .notification-item p {
-    margin: 5px 0 10px;
-    font-size: 0.95rem;
-    color: #555;
-  }
-  
-  .notification-item .timestamp {
-    font-size: 0.85rem;
-    color: #aaa;
-  }
-  
-  .btn-mark-read {
-    background: #1e88e5;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    padding: 10px 15px;
-    cursor: pointer;
-    font-size: 1rem;
-  }
-  
-  .btn-mark-read:hover {
-    background: #1565c0;
-  }
-  
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 20px;
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.notifications-section h2 {
+  font-size: 1.5rem;
+  color: #1e88e5;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.notification-list {
+  list-style: none;
+  padding: 0;
+}
+
+/* Individual Notification Item */
+.notification-item {
+  background: #f9fbfe;
+  border: 1px solid #e0e5ec;
+  border-radius: 8px;
+  padding: 15px 20px;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.notification-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.notification-content h4 {
+  margin: 0 0 5px;
+  font-size: 1.2rem;
+  color: #2c3e50; /* Text color for title */
+  font-weight: 600;
+}
+
+.notification-content p {
+  margin: 0;
+  font-size: 1rem;
+  color: #7f8c8d; /* Subdued gray for message */
+}
+
+.timestamp {
+  font-size: 0.85rem;
+  color: #95a5a6; /* Lighter gray for timestamps */
+}
+
+/* Mark All as Read Button */
+.btn-mark-read {
+  display: block;
+  margin: 20px auto 0;
+  background: #1e88e5;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-mark-read:hover {
+  background: #1565c0;
+  transform: scale(1.05);
+}
+
+/* No Notifications Placeholder */
+.no-notifications {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #7f8c8d;
+  margin-top: 20px;
+}

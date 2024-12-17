@@ -26,7 +26,7 @@
     font-weight: 500;
     transition: var(--hover-timing);
 
-    background: var(--light-01);
+    background:  #f5f6fa;
 
     width: 100vw;
     overflow-x: hidden;
@@ -1138,11 +1138,7 @@ color: #777; /* Lighter color for roles */
 
 
 
-#e-showroom {
-background-color: #0d324f; /* Section background color */
-padding: 40px 20px; /* Padding for the section */
-color: #ebeae9; /* Text color */
-}
+
 .product-grid {
 display: grid;
 grid-template-columns: repeat(4, 1fr); /* 4 columns */
@@ -1208,7 +1204,7 @@ background-color: #0d0d0d; /* Darker background on hover */
 .category-header h3 {
 text-align: center; /* Center the text */
     font-size: 2rem; /* Font size for the heading */
-    color: #333; /* Text color */
+    color: #fff; /* Text color */
     margin: 20px 0; /* Space above and below the heading */
 }
 

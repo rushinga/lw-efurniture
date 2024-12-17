@@ -22,13 +22,13 @@ const Navbar = ({ active, language, onLanguageChange }) => {
           <i className="fas fa-users"></i>
           <span>Users</span>
         </a>
-        <a
+        {/* <a
           href="/admin/furniture"
           className={`nav-link ${active === "furniture" ? "active" : ""}`}
         >
           <i className="fas fa-couch"></i>
           <span>Furniture</span>
-        </a>
+        </a> */}
         <a
           href="/admin/orders"
           className={`nav-link ${active === "orders" ? "active" : ""}`}
