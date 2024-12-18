@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../styles/forgotPasswordStyles.css"; // Assuming your styles are in forgotPasswordStyles.css
+import { Link } from "react-router-dom";
 
 const ForgotPasswordBody = () => {
   const [email, setEmail] = useState("");
@@ -70,7 +71,8 @@ const ForgotPasswordBody = () => {
           <button type="submit">Send Reset Link</button>
         </form>
         <p>
-          <a href="/login">Remembered your password? Log in</a>
+          {/* <a href="/login">Remembered your password? Log in</a> */}
+          <Link to="/login">Remembered your password? Log in</Link>
         </p>
       </div>
     </section>
