@@ -138,13 +138,16 @@ const LoginBody = () => {
     }
 
     try {
-      const response = await fetch("http://localhost:9090/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ username, password }),
-      });
+      const response = await fetch(
+        "https://lw-efurniture-backend-production.up.railway.app/login",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ username, password }),
+        }
+      );
 
       if (!response.ok) {
         // Handle HTTP errors

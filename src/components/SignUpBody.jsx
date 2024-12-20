@@ -27,13 +27,16 @@ const SignUpBody = () => {
     e.preventDefault();
     // Here you can handle the API call to submit the form data
     console.log("Form Data Submitted", formData);
-    const response = await fetch("http://localhost:9090/register", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    });
+    const response = await fetch(
+      "https://lw-efurniture-backend-production.up.railway.app/register",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      }
+    );
 
     if (!response.ok) {
       // Handle HTTP errors
